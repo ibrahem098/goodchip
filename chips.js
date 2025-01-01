@@ -3,7 +3,7 @@ let chips = [
         categoryTitle: "Logic Gates",
         subs: [
             {
-                title: "AND Gates",
+                title: "AND",
                 List: [
                     { ic: "7408", desc: "Quad 2-Input AND Gate" },
                     { ic: "CD4081", desc: "Quad 2-Input AND Gate (CMOS)" },
@@ -12,7 +12,7 @@ let chips = [
                 ]
             },
             {
-                title: "OR Gates",
+                title: "OR",
                 List: [
                     { ic: "7432", desc: "Quad 2-Input OR Gate" },
                     { ic: "CD4071", desc: "Quad 2-Input OR Gate (CMOS)" },
@@ -21,7 +21,7 @@ let chips = [
                 ]
             },
             {
-                title: "NOT Gates",
+                title: "NOT",
                 List: [
                     { ic: "7404", desc: "Hex Inverter" },
                     { ic: "CD4069", desc: "Hex Inverter (CMOS)" },
@@ -30,7 +30,7 @@ let chips = [
                 ]
             },
             {
-                title: "NAND Gates",
+                title: "NAND",
                 List: [
                     { ic: "7400", desc: "Quad 2-Input NAND Gate" },
                     { ic: "CD4011", desc: "Quad 2-Input NAND Gate (CMOS)" },
@@ -39,7 +39,7 @@ let chips = [
                 ]
             },
             {
-                title: "NOR Gates",
+                title: "NOR",
                 List: [
                     { ic: "7402", desc: "Quad 2-Input NOR Gate" },
                     { ic: "CD4001", desc: "Quad 2-Input NOR Gate (CMOS)" },
@@ -48,7 +48,7 @@ let chips = [
                 ]
             },
             {
-                title: "XOR Gates",
+                title: "XOR",
                 List: [
                     { ic: "7486", desc: "Quad 2-Input XOR Gate" },
                     { ic: "CD4030", desc: "Quad 2-Input XOR Gate (CMOS)" },
@@ -62,7 +62,7 @@ let chips = [
         categoryTitle: "Counters",
         subs: [
             {
-                title: "Binary Counters",
+                title: "Binary",
                 List: [
                     { ic: "7493", desc: "4-Bit Binary Counter" },
                     { ic: "CD4040", desc: "12-Stage Binary Ripple Counter" },
@@ -70,7 +70,7 @@ let chips = [
                 ]
             },
             {
-                title: "Decade Counters",
+                title: "Decade",
                 List: [
                     { ic: "7490", desc: "Decade Counter" },
                     { ic: "CD4017", desc: "Decade Counter/Divider" },
@@ -78,7 +78,7 @@ let chips = [
                 ]
             },
             {
-                title: "Up/Down Counters",
+                title: "Up/Down",
                 List: [
                     { ic: "74190", desc: "BCD Up/Down Counter" },
                     { ic: "CD4510", desc: "BCD Up/Down Counter (CMOS)" },
@@ -91,28 +91,28 @@ let chips = [
         categoryTitle: "Flip-Flops",
         subs: [
             {
-                title: "SR Flip-Flops",
+                title: "SR",
                 List: [
                     { ic: "CD4011", desc: "Configurable as SR Flip-Flop" },
                     { ic: "7400", desc: "Configurable as SR Flip-Flop" }
                 ]
             },
             {
-                title: "JK Flip-Flops",
+                title: "JK",
                 List: [
                     { ic: "7473", desc: "Dual JK Flip-Flop with Clear" },
                     { ic: "74LS76", desc: "Dual JK Flip-Flop" }
                 ]
             },
             {
-                title: "D Flip-Flops",
+                title: "D",
                 List: [
                     { ic: "7474", desc: "Dual D Flip-Flop with Preset and Clear" },
                     { ic: "CD4013", desc: "Dual D Flip-Flop (CMOS)" }
                 ]
             },
             {
-                title: "T Flip-Flops",
+                title: "T",
                 List: [
                     { ic: "74LS74", desc: "Configurable as T Flip-Flop" },
                     { ic: "CD4027", desc: "Configurable as T Flip-Flop" }
@@ -163,6 +163,35 @@ let chips = [
         ]
     }
 ];
-console.log(chips);
 
+
+const categoryList = document.querySelector(".categories")
+chips.forEach(category => {
+    const categoryDiv = document.createElement("div")
+    categoryDiv.classList.add("categoryDiv")
+    categoryDiv.textContent = `${category.categoryTitle}`
+
+    console.log(category.subs.length);
+
+    if (category.subs.length > 1) {
+        category.subs.forEach(sub => {
+            const subList = document.createElement("span")
+            subList.classList.add("subList")
+            subList.textContent = `${sub.title}`
+            categoryDiv.appendChild(subList)
+        })
+    }
+    categoryDiv.addEventListener("click", () => {
+        const subLists = categoryDiv.querySelectorAll(".subList")
+        subLists.forEach(sub => {
+            if (sub.style.display === "none") {
+                sub.style.display = "block"
+            } else {
+                sub.style.display = "none"
+            }
+        })
+    })
+
+    categoryList.appendChild(categoryDiv)
+})
 

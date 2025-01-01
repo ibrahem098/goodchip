@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2;
+    margin: 20px;
+}
+
+
+.subList {
+    display: none;
+    padding-left: 40px;
+}
+
+.categoryDiv {
+    display: flex;
+    white-space: nowrap;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.left {
+    overflow: visible;
+}
