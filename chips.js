@@ -161,6 +161,80 @@ let chips = [
                 ]
             }
         ]
+    }, {
+        categoryTitle: "Display Drivers",
+        subs: [
+            {
+                title: "7-Segment Drivers",
+                List: [
+                    { ic: "74147", desc: "BCD to 7-Segment Decoder/Driver" },
+                    { ic: "7447", desc: "BCD to 7-Segment Decoder" },
+                    { ic: "74LS48", desc: "BCD to 7-Segment Decoder" }
+                ]
+            },
+            {
+                title: "LED Drivers",
+                List: [
+                    { ic: "ULN2003", desc: "7-Channel Darlington Driver" },
+                    { ic: "TLC5958", desc: "48-Channel LED Driver" }
+                ]
+            }
+        ]
+    }, {
+        categoryTitle: "Voltage Regulators",
+        subs: [
+            {
+                title: "Linear Regulators",
+                List: [
+                    { ic: "7805", desc: "5V Linear Regulator" },
+                    { ic: "7812", desc: "12V Linear Regulator" },
+                    { ic: "LM317", desc: "Adjustable Linear Voltage Regulator" }
+                ]
+            },
+            {
+                title: "Switching Regulators",
+                List: [
+                    { ic: "LM2596", desc: "DC-DC Buck Converter" },
+                    { ic: "LM2575", desc: "DC-DC Step-Down Regulator" }
+                ]
+            }
+        ]
+    }, {
+        categoryTitle: "Audio Amplifiers",
+        subs: [
+            {
+                title: "Low-Power Amplifiers",
+                List: [
+                    { ic: "LM386", desc: "Low Power Audio Amplifier" },
+                    { ic: "TDA2822", desc: "Dual Audio Power Amplifier" }
+                ]
+            },
+            {
+                title: "High-Power Amplifiers",
+                List: [
+                    { ic: "TDA2030", desc: "Audio Power Amplifier" },
+                    { ic: "TDA2035", desc: "Audio Power Amplifier" }
+                ]
+            }
+        ]
+    }, {
+        categoryTitle: "Operational Amplifiers",
+        subs: [
+            {
+                title: "Standard Op-Amps",
+                List: [
+                    { ic: "LM741", desc: "General-Purpose Operational Amplifier" },
+                    { ic: "TL081", desc: "Low-Noise Operational Amplifier" }
+                ]
+            },
+            {
+                title: "Precision Op-Amps",
+                List: [
+                    { ic: "OP07", desc: "Low-Noise Precision Op-Amp" },
+                    { ic: "OPA2134", desc: "Precision Low-Noise Operational Amplifier" }
+                ]
+            }
+        ]
     }
 ];
 
