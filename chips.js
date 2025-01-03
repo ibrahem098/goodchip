@@ -238,7 +238,7 @@ let chips = [
     }
 ];
 
-
+let subsOn = true;
 const categoryList = document.querySelector(".categories")
 chips.forEach(category => {
     const categoryDiv = document.createElement("div")
@@ -256,7 +256,13 @@ chips.forEach(category => {
         })
     }
     categoryDiv.addEventListener("click", () => {
+        if (subsOn) {
+            subsOn = false
+        } else {
+            subsOn = true
+        }
         const subLists = categoryDiv.querySelectorAll(".subList")
+
         subLists.forEach(sub => {
             if (sub.style.display === "none") {
                 sub.style.display = "block"
@@ -264,6 +270,7 @@ chips.forEach(category => {
                 sub.style.display = "none"
             }
         })
+
     })
 
     categoryList.appendChild(categoryDiv)
